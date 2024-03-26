@@ -54,9 +54,9 @@ export const UserAuthProvider: React.FunctionComponent<
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("I am in useEffect and user is : ", user);
+      // console.log("I am in useEffect and user is : ", user);
       if (user) {
-        console.log("The logged in user state is : ", user);
+        // console.log("The logged in user state is : ", user);
         setUser(user);
       }
 

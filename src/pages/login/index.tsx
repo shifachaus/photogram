@@ -108,7 +108,7 @@ const Login: React.FunctionComponent<ILoginProps> = (props) => {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="dipesh@example.com"
+                      placeholder="abc@example.com"
                       value={userLogInInfo.email}
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setuserLogInInfo({

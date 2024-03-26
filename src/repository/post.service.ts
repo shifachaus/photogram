@@ -3,10 +3,22 @@ import { Post } from "@/types";
 import {
   addDoc,
   collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+  where,
 } from "firebase/firestore";
 
 const COLLECTION_NAME = "posts";
 
 export const createPost = (post: Post) => {
   return addDoc(collection(db, COLLECTION_NAME), post);
+};
+
+export const getPostByUserId = (id: string) => {
+  const q = query(collection(db, COLLECTION_NAME), where("userId", "==", id));
+  return getDocs(q);
 };

@@ -28,3 +28,12 @@ export interface PhotoMeta {
   uuid: string;
 }
 
+export interface DocumentResponse{
+  id: string,
+  caption: string;
+  photos: PhotoMeta[];
+  likes: number;
+  userlikes: [];
+  userId: string | null;
+  date: Date;
+}
