@@ -7,6 +7,7 @@ import { Edit2Icon, HeartIcon } from "lucide-react";
 import avatar from "@/assets/images/avatar.jpg";
 import { useNavigate } from "react-router-dom";
 import { getPostByUserId } from "@/repository/post.service";
+import { getUserProfile } from "@/repository/user.service";
 
 interface IProfileProps {}
 
@@ -73,9 +74,17 @@ const Profile: React.FunctionComponent<IProfileProps> = () => {
     });
   };
 
+  const getUserProfileInfo = async (userId: string) => {
+    const data: ProfileResponse = (await getUserProfile(userId)) || {};
+    if (data.displayName) {
+      setUserInfo(data);
+    }
+  };
+
   React.useEffect(() => {
     if (user != null) {
       getAllPost(user.uid);
+      getUserProfileInfo(user.uid);
     }
   }, []);
 

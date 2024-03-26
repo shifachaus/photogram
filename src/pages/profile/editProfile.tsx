@@ -12,10 +12,12 @@ import {
   createUserProfile,
   updateUserProfile,
 } from "@/repository/user.service";
+import { useUserAuth } from "@/context/userAuthContext";
 
 interface IEditProfileProps {}
 
 const EditProfile: React.FunctionComponent<IEditProfileProps> = (props) => {
+  const { user, updateProfileInfo } = useUserAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,6 +37,27 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = (props) => {
 
   const updateProfile = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
+    try {
+      if (id) {
+        const response = await updateUserProfile(id, data);
+        console.log("The Updated user profile is : ", response);
+      } else {
+        const response = await createUserProfile(data);
+        console.log("The created user profile is : ", response);
+      }
+
+      const profileInfo: ProfileInfo = {
+        user: user!,
+        displayName: data.displayName,
+        photoURL: data.photoURL,
+      };
+
+      updateProfileInfo(profileInfo);
+
+      navigate("/profile");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   console.log("The fileEntry is : ", fileEntry);

@@ -1,5 +1,5 @@
 import { db } from "@/firebaseConfig";
-import { DocumentResponse, Post } from "@/types";
+import { DocumentResponse, Post, ProfileInfo } from "@/types";
 import {
   addDoc,
   collection,
