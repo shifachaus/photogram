@@ -22,7 +22,6 @@ export const getPostByUserId = (id: string) => {
   return getDocs(q);
 };
 
-
 export const getPosts = async () => {
   try {
     const q = query(collection(db, COLLECTION_NAME), orderBy("date", "desc"));
@@ -46,12 +45,14 @@ export const getPosts = async () => {
   }
 };
 
-
-export const updateLikesOnPost = (id: string, userlikes: string[], likes: number) => {
-
+export const updateLikesOnPost = (
+  id: string,
+  userlikes: string[],
+  likes: number
+) => {
   const docRef = doc(db, COLLECTION_NAME, id);
   return updateDoc(docRef, {
     likes: likes,
-    userlikes: userlikes
-  })
-}
+    userlikes: userlikes,
+  });
+};
