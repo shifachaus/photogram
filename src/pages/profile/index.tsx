@@ -92,6 +92,8 @@ const Profile: React.FunctionComponent<IProfileProps> = () => {
     navigate("/edit-profile", { state: userInfo });
   };
 
+  console.log(userInfo);
+
   return (
     <Layout>
       <div className="flex justify-center">

@@ -56,3 +56,22 @@ export const updateLikesOnPost = (
     userlikes: userlikes,
   });
 };
+
+export const updateUserInfoOnPosts = async (profileInfo: ProfileInfo) => {
+  const q = query(
+    collection(db, COLLECTION_NAME),
+    where("userId", "==", profileInfo.user?.uid)
+  );
+  const querySnapshot = await getDocs(q);
+  if (querySnapshot.size > 0) {
+    querySnapshot.forEach((document) => {
+      const docRef = doc(db, COLLECTION_NAME, document.id);
+      updateDoc(docRef, {
+        username: profileInfo.displayName,
+        photoURL: profileInfo.photoURL,
+      });
+    });
+  } else {
+    console.log("The user doesn;t have anu post");
+  }
+};

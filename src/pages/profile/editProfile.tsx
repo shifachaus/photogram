@@ -13,6 +13,7 @@ import {
   updateUserProfile,
 } from "@/repository/user.service";
 import { useUserAuth } from "@/context/userAuthContext";
+import { updateUserInfoOnPosts } from "@/repository/post.service";
 
 interface IEditProfileProps {}
 
@@ -53,6 +54,7 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = (props) => {
       };
 
       updateProfileInfo(profileInfo);
+      updateUserInfoOnPosts(profileInfo);
 
       navigate("/profile");
     } catch (err) {
