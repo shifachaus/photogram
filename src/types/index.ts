@@ -20,7 +20,9 @@ export interface Post {
   photos: PhotoMeta[];
   likes: number;
   userlikes: [];
-  userId: string | null;
+  userId?: string;
+  username?: string;
+  photoURL?: string;
   date: Date;
 }
 
@@ -35,6 +37,8 @@ export interface DocumentResponse {
   photos?: PhotoMeta[];
   likes?: number;
   userlikes?: [];
+  username?: string;
+  photoURL?: string;
   userId?: string | null;
   date?: Date;
 }
