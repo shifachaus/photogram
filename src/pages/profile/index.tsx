@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "@/components/layout";
 import { useUserAuth } from "@/context/userAuthContext";
-import { DocumentResponse, Post, ProfileInfo, ProfileResponse } from "@/types";
+import { DocumentResponse, Post, ProfileResponse } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Edit2Icon, HeartIcon } from "lucide-react";
 import avatar from "@/assets/images/avatar.jpg";
