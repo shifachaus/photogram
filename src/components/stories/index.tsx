@@ -9,34 +9,34 @@ interface IStoriesProps {}
 
 const Stories: React.FunctionComponent<IStoriesProps> = (props) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between gap-4 cursor-pointer">
       <img
         src={image2}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
       <img
         src={image3}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
       <img
         src={image5}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
       <img
         src={image6}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
       <img
         src={image7}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
       <img
         src={image3}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
       <img
         src={image2}
-        className="w-20 h-20 rounded-full border-4 border-slate-800 object-cover"
+        className="w-16 h-16 rounded-full border-4 border-slate-800 object-cover"
       />
     </div>
   );

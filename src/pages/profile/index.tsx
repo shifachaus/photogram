@@ -101,20 +101,20 @@ const Profile: React.FunctionComponent<IProfileProps> = () => {
           <h3 className="bg-slate-800 text-white text-center text-lg p-2">
             Profile
           </h3>
-          <div className="p-8 pb-4 border-b">
-            <div className="flex flex-row items-center pb-2 mb-2">
+          <div className="p-4 lg:p-8 pb-4 border-b">
+            <div className="flex flex-col lg:flex-row lg:items-center pb-2 mb-2">
               <div className="mr-2">
                 <img
                   src={userInfo.photoURL ? userInfo.photoURL : avatar}
                   alt="avatar"
-                  className="w-28 h-28 rounded-full border-2 border-slate-800 object-cover"
+                  className="w-16 h-16 rounded-full border-2 border-slate-800 object-cover"
                 />
               </div>
               <div>
-                <div className="text-xl ml-3">
+                <div className="text-lg ml-3">
                   {userInfo.displayName ? userInfo.displayName : "Guest_user"}
                 </div>
-                <div className="text-xl ml-3">
+                <div className="text-md ml-3">
                   {user?.email ? user.email : ""}
                 </div>
               </div>
@@ -127,7 +127,7 @@ const Profile: React.FunctionComponent<IProfileProps> = () => {
             </div>
           </div>
 
-          <div className="p-8">
+          <div className="p-4 lg:p-8 ">
             <h2 className="mb-5">My Posts</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
               {data ? renderPosts() : <div>...Loading</div>}

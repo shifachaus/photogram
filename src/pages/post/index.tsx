@@ -59,7 +59,7 @@ const CreatePost: React.FunctionComponent<ICreatePostProps> = (props) => {
           <h3 className="bg-slate-800 text-white text-center text-lg p-2">
             Create Post
           </h3>
-          <div className="p-8">
+          <div className="p-4 lg:p-8">
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col">
                 <Label className="mb-4" htmlFor="caption">

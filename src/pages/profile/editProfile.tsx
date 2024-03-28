@@ -78,7 +78,7 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = (props) => {
             Edit Profile
           </h3>
 
-          <div className="p-8">
+          <div className="p-4 lg:p-8">
             <form onSubmit={updateProfile}>
               <div className="flex flex-col">
                 <Label className="mb-4" htmlFor="photo">
@@ -89,13 +89,13 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = (props) => {
                     <img
                       src={fileEntry.files[0].cdnUrl!}
                       alt="avatar"
-                      className="w-28 h-28 rounded-full border-2 border-slate-800 object-cover"
+                      className="w-16 h-16 rounded-full border-2 border-slate-800 object-cover"
                     />
                   ) : (
                     <img
                       src={data.photoURL ? data.photoURL : avatar}
                       alt="avatar"
-                      className="w-28 h-28 rounded-full border-2 border-slate-800 object-cover"
+                      className="w-16 h-16 rounded-full border-2 border-slate-800 object-cover"
                     />
                   )}
                 </div>

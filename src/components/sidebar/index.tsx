@@ -51,21 +51,22 @@ const navItems = [
     icon: settingsIcon,
   },
 ];
-const Sidebar: React.FunctionComponent<ISidebarProps> = (props) => {
+
+const Sidebar: React.FunctionComponent<ISidebarProps> = () => {
   const { pathname } = useLocation();
   const { logOut } = useUserAuth();
   return (
     <nav className="flex flex-col relative h-screen max-w-sm w-full">
       <div className="flex justify-center m-5">
-        <div className="text-white text-lg">PhotoGram</div>
+        <div className="text-black text-xl font-black">PhotoGram</div>
       </div>
       {navItems.map((item) => (
         <div
           className={cn(
             buttonVariants({ variant: "default" }),
             pathname === item.link
-              ? "bg-white text-white-800 hover:bg-white rounded-none"
-              : "hover:bg-slate-950 hover:text-white bg-transparent rounded-none",
+              ? "bg-gray-100 text-black hover:bg-gray-100 rounded-none"
+              : "hover:bg-gray-100 bg-white text-black  bg-transparent rounded-none",
             "justify-start"
           )}
           key={item.name}
@@ -74,12 +75,10 @@ const Sidebar: React.FunctionComponent<ISidebarProps> = (props) => {
             <span>
               <img
                 src={item.icon}
-                className="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-2 "
                 alt={item.name}
                 style={{
-                  filter: `${
-                    pathname === item.link ? "invert(0)" : "invert(1)"
-                  }`,
+                  filter: `invert(0)`,
                 }}
               />
             </span>
@@ -87,12 +86,13 @@ const Sidebar: React.FunctionComponent<ISidebarProps> = (props) => {
           </Link>
         </div>
       ))}
+
       <div
         className={cn(
           buttonVariants({ variant: "default" }),
           pathname === "/login"
             ? "bg-white text-white-800 hover:bg-white rounded-none"
-            : "hover:bg-slate-950 hover:text-white bg-transparent rounded-none",
+            : "hover:bg-gray-100 bg-white rounded-none text-white-800",
           "justify-start"
         )}
       >
@@ -103,7 +103,7 @@ const Sidebar: React.FunctionComponent<ISidebarProps> = (props) => {
               className="w-5 h-5 mr-2"
               alt="Logout"
               style={{
-                filter: `${pathname === "/login" ? "invert(0)" : "invert(1)"}`,
+                filter: `invert(0)`,
               }}
             />
           </span>
